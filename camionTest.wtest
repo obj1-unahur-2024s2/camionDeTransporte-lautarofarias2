@@ -1,9 +1,20 @@
 import camion.*
+import cosas.*
 
 describe "group of test for camion" {
 
-  test "first test" {
-    assert.that(true)
+  method initialize(){
+    bumblebee.cambiarARobot()
+    arena.peso(150)
+    bateriaAntiarea.tieneMisiles(true)
+    paqueteLadrillos.cantLadrillos(80)
+    embalaje.envuelve(paqueteLadrillos)
+    camion.cargarVarios([bumblebee, arena, bateriaAntiarea, embalaje])
+  }
+
+
+  test "camion cargado con cosas" {
+    assert.equals(2410, camion.pesoTotal())
   }
 
 }
